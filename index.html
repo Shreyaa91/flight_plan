@@ -1,0 +1,710 @@
+<!DOCTYPE html><html lang="en"><head>
+		
+		<title>Flight Plan Database</title>
+
+
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/app-icon.min.png">
+
+<meta property="og:site_name " content="Flight Plan Database">
+<meta property="og:image" content="images/logo.min.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+
+
+
+<link rel="stylesheet" type="text/css" href="css/3039454339812342097943718659136036175965.css">
+
+
+		<meta property="og:title" content="Flight Plan Database">
+		<meta property="og:description" content="A flight planning site for use with X-Plane, FSX, Infinite Flight, PMDG and other flight sims">
+
+		<meta name="description" content="A flight planning site for X-Plane, FSX, Infinite Flight and many other flight simulators, with an extensive database of flight plans and an online route planner">
+		<meta name="keywords" content="flight plan database, aviation, flightplans, route planner, flightgear, flight simulator, x-plane, FSX, PMDG, FS9, online, infinite flight">
+		<meta name="google-site-verification" content="tTf_GesHkRFK3wACpzEtbE1hcmxpP11Nu_GBTt80nWw">
+	</head>
+	
+	<body>
+		<div class="navigation">
+	<div style="display:none" id="_csrf">WqNAvFGL-D2qt46DWHdi62EcjoMXtNQQ21eU</div>
+	
+	<div class="navigation-icon navigation-item">
+		<a class="menu-link" href="/"></a>
+	</div>
+
+	<div class="navigation-separator"></div>
+
+	<nav class="navigation-links navigation-item">
+		<ul class="menu-container">
+			<li>
+				<a class="menu-link" href="/tags">Tags</a>
+			</li>
+			<li>
+				<a class="menu-link" href="/planner">Planner</a>
+			</li>
+			<li>
+				<a class="menu-link" href="/upload">Upload</a>
+			</li>
+			<li>
+				<a class="menu-link" href="/tools">Tools</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="navigation-separator"></div>
+			
+	<div class="navigation-search navigation-item">
+		<form method="get" action="/search">
+			<input type="text" name="q" id="search" value="" placeholder="Search..." tabindex="1" autocorrect="off" autocapitalize="off" spellcheck="false">
+		</form>
+	</div>
+
+	<div class="navigation-search-advanced navigation-item">
+		<a href="/search">
+			<img class="navigation-search-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPAQMAAAABGAcJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURUdwTAAAAJ8qhFEAAAABdFJOUwBA5thmAAAALUlEQVQI12NgZGBgbmAwnsFg/4NB/gODTAFDhQ3DDzsQCWQDRYDiQFmgGkYGAPK3CuGnjffOAAAAAElFTkSuQmCC" title="Advanced Search">
+		</a>
+	</div>
+
+	
+		<div class="navigation-account navigation-item">
+			<a class="menu-link" href="/login">Join</a>
+		</div>
+	
+
+	<div class="navigation-account navigation-item">
+		
+			<a class="menu-link" href="/login" id="navigation-login">Sign in</a>
+		
+	</div>
+
+</div>
+
+<div id="account-dropdown" class="navigation-dropdown">
+	
+		<form action="/auth/login" method="POST">
+			<label for="nav-login-id">Username / Email</label><br>
+			<input type="text" name="username" id="nav-login-id" required=""><br>
+
+			<label for="nav-login-username">Password</label><br>
+			<input type="password" name="password" id="nav-login-password" required=""><br>
+			<a href="/forgotpassword">Forgot your password?</a><br><br>
+
+			<input type="checkbox" id="nav-login-remember" name="remember" checked="">
+			<label for="nav-login-remember">Remember me</label><br>
+
+			<input type="hidden" name="_csrf" value="WqNAvFGL-D2qt46DWHdi62EcjoMXtNQQ21eU">
+
+			<input type="submit" value="Sign In">
+		</form>
+	
+</div>
+
+		<div class="container">
+			
+				<div class="main">
+					<div class="main-item-faded-title">
+						Welcome
+					</div>
+
+					<div class="main-item">
+						<div class="welcome-textbox">
+							Welcome to the Flight Plan Database. We are a flight simulation utility for creating, sharing and finding routes and flight plans for use with X-Plane, FSX, Infinite Flight and other compatible flight simulators. <a href="/login">Join</a> for free to share your uploaded, decoded or generated routes.
+						</div>
+
+						<div class="welcome-quicklinks">
+							<br>Get started with some of our most popular features:<br><br>
+
+							<a class="welcome-quicklink" href="/planner">
+								<img class="welcome-quicklink-icon" src="images/routegen.svg">
+								Planner<br>
+								<span class="welcome-quicklink-description">Create new flight plans from real world routes and airways</span>
+							</a>
+
+							<a class="welcome-quicklink" href="/search">
+								<img class="welcome-quicklink-icon" src="images/search.svg">
+								Search<br>
+								<span class="welcome-quicklink-description">Find flight plans for your favourite route or explore new parts of the world</span>
+							</a>
+
+							<a class="welcome-quicklink" href="/upload">
+								<img class="welcome-quicklink-icon" src="images/upload.svg">
+								Upload<br>
+								<span class="welcome-quicklink-description">Submit your own flight plans to share with the world</span>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			
+
+			
+
+			<div class="main-masonry-container main">
+				<div class="main-masonry-search main-masonry main-item">
+					<div class="search-header">
+						<img src="images/search.svg">
+						<span class="faded-header">Search</span>
+					</div>
+					<form method="GET" action="/search/">
+						<label for="search-from">Departure</label><br>
+						<input type="text" name="from" id="search-from" placeholder="ICAO / Airport Name"><br>
+
+						<label for="search-to">Arrival</label><br>
+						<input type="text" name="to" id="search-to" placeholder="ICAO / Airport Name"><br>
+						<br>
+
+						<div>
+						<label for="search-tags">Tags</label><br>
+						<select name="tag" id="search-tags" multiple="">
+							
+								
+									<option>Generated</option>
+								
+									<option>Decoded</option>
+								
+									<option>Routegen</option>
+								
+									<option>Commercial</option>
+								
+									<option>Real</option>
+								
+									<option>flight</option>
+								
+									<option>infinite</option>
+								
+									<option>global</option>
+								
+									<option>Standard</option>
+								
+									<option>flying</option>
+								
+									<option>devstudio</option>
+								
+									<option>flyingdevstudio</option>
+								
+									<option>IstanbulVA</option>
+								
+									<option>Novice</option>
+								
+									<option>infiniteflight</option>
+								
+									<option>C208B</option>
+								
+									<option>BOEING</option>
+								
+									<option>airbus</option>
+								
+									<option>Modified</option>
+								
+									<option>International</option>
+								
+									<option>N381XP</option>
+								
+									<option>AZUL</option>
+								
+									<option>airlines</option>
+								
+							
+						</select>
+						</div><br>
+
+						<div style="text-align: right">
+							<input type="button" style="float: left" onclick="location.href='/search';" value="Advanced">
+							<input type="submit" value="Search">
+						</div>
+					</form>
+				</div>
+
+				<div class="main-masonry-search main-masonry main-item">
+					<div class="search-header">
+						<img src="images/routegen.svg">
+						<span class="faded-header">Quick Plan</span>
+					</div>
+
+					<form method="GET" action="/planner" onsubmit="location.href = '/planner#from=' + document.getElementById('planner-from').value + '&amp;to=' + document.getElementById('planner-to').value; return false;">
+						<label for="planner-from">Departure</label><br>
+						<input type="text" name="from" id="planner-from" placeholder="ICAO / Airport Name"><br>
+
+						<label for="planner-to">Arrival</label><br>
+						<input type="text" name="to" id="planner-to" placeholder="ICAO / Airport Name"><br>
+						<br>
+
+						<div style="text-align: right">
+							<input type="button" style="float: left" onclick="location.href='/planner';" value="Advanced">
+							<input type="submit" value="Fly!">
+						</div>
+					</form>
+				</div>
+				
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195808">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_40 1x, staticmap_49 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap" srcset="staticmap_18 2x" alt="Map of flight plan from EDDN to ETSI">
+    </picture>
+						<div class="main-masonry-title">
+							EDDN → ETSI 
+							
+								by SMild
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:32:26 GMT" datetime="2024-09-07T16:32:26Z">5 minutes ago</time>
+								<hr>
+								Nuernberg Airport<br>
+								to<br>
+								Ingolstadt Manching
+								<hr>
+								50 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+						<div class="main-masonry-ad">
+							
+	<script async="" src="js/adsbygoogle.js" nonce="314b8e9c957052a9d63f6b38cce969199dbd061941918f3d18"></script>
+	<style type="text/css">
+		.adslot_1 { width: 300px; height: 300px; background: #FFF; min-height: 300px; }
+		.adslot_1::after { 
+			content: "Advertisement - Login to hide";
+			font-size: 10px;
+			color: #888;
+			display: block;
+			text-align: center;
+			text-decoration: none;
+		}
+	</style>
+	<ins class="adsbygoogle adslot_1" style="display:block" data-ad-client="ca-pub-1810245067593528" data-ad-slot="5752960893" data-ad-format="rectangle"></ins>
+	<script nonce="314b8e9c957052a9d63f6b38cce969199dbd061941918f3d18">
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+						</div>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195807">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_50 1x, staticmap_28 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_1" srcset="staticmap_17 2x" alt="Map of flight plan from CYQF to CYVR">
+    </picture>
+						<div class="main-masonry-title">
+							CYQF → CYVR 
+							
+								by Zardofcb
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:32:13 GMT" datetime="2024-09-07T16:32:13Z">5 minutes ago</time>
+								<hr>
+								RED DEER REGIONAL<br>
+								to<br>
+								Vancouver
+								<hr>
+								412 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195806">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_36 1x, staticmap_42 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_6" srcset="staticmap_19 2x" alt="Map of flight plan from KOAK to KAPC">
+    </picture>
+						<div class="main-masonry-title">
+							KOAK → KAPC 
+							
+								
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:31:17 GMT" datetime="2024-09-07T16:31:17Z">6 minutes ago</time>
+								<hr>
+								Metro Oakland Intl<br>
+								to<br>
+								Napa Co
+								<hr>
+								30 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195805">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_35 1x, staticmap_43 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_8" srcset="staticmap_25 2x" alt="Map of flight plan from LSZH to LICA">
+    </picture>
+						<div class="main-masonry-title">
+							LSZH → LICA 
+							
+								by beaver117
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:30:53 GMT" datetime="2024-09-07T16:30:53Z">6 minutes ago</time>
+								<hr>
+								Zurich<br>
+								to<br>
+								Lamezia Terme "Sant'Eufemia"
+								<hr>
+								625 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195804">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_53 1x, staticmap_29 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_5" srcset="staticmap_20 2x" alt="Map of flight plan from LGSK to LBSF">
+    </picture>
+						<div class="main-masonry-title">
+							LGSK → LBSF 
+							
+								by Airbus171
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:30:44 GMT" datetime="2024-09-07T16:30:44Z">6 minutes ago</time>
+								<hr>
+								Skiathos<br>
+								to<br>
+								Sofia
+								<hr>
+								213 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195803">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_38 1x, staticmap_34 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_4" srcset="staticmap_21 2x" alt="Map of flight plan from EDDF to LIPZ">
+    </picture>
+						<div class="main-masonry-title">
+							EDDF → LIPZ 
+							
+								
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:27:12 GMT" datetime="2024-09-07T16:27:12Z">10 minutes ago</time>
+								<hr>
+								Frankfurt<br>
+								to<br>
+								Venezia-Tessera "Marco Polo"
+								<hr>
+								317 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195802">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_45 1x, staticmap_31 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_3" srcset="staticmap_27 2x" alt="Map of flight plan from EDDH to EDDL">
+    </picture>
+						<div class="main-masonry-title">
+							EDDH → EDDL 
+							
+								
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:27:08 GMT" datetime="2024-09-07T16:27:08Z">10 minutes ago</time>
+								<hr>
+								Hamburg International Airport<br>
+								to<br>
+								Dusseldorf
+								<hr>
+								184 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195801">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_41 1x, staticmap_30 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_2" srcset="staticmap_15 2x" alt="Map of flight plan from CYYC to KBUF">
+    </picture>
+						<div class="main-masonry-title">
+							CYYC → KBUF 
+							
+								by EricR
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:55 GMT" datetime="2024-09-07T16:26:55Z">10 minutes ago</time>
+								<hr>
+								Calgary International<br>
+								to<br>
+								Buffalo Niagara Intl
+								<hr>
+								1,523 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195800">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_54 1x, staticmap_46 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_7" srcset="staticmap_23 2x" alt="Map of flight plan from LIRJ to LIML">
+    </picture>
+						<div class="main-masonry-title">
+							LIRJ → LIML 
+							
+								by PITSIKOS
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:55 GMT" datetime="2024-09-07T16:26:55Z">10 minutes ago</time>
+								<hr>
+								Marina di Campo "Teseo Tesei"<br>
+								to<br>
+								Milano-Linate "Enrico Forlanini"
+								<hr>
+								167 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195799">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_32 1x, staticmap_37 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_11" srcset="staticmap_26 2x" alt="Map of flight plan from EDMJ to LOWI">
+    </picture>
+						<div class="main-masonry-title">
+							EDMJ → LOWI 
+							
+								
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:43 GMT" datetime="2024-09-07T16:26:43Z">10 minutes ago</time>
+								<hr>
+								Jesenwang<br>
+								to<br>
+								Innsbruck
+								<hr>
+								56 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195798">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_52 1x, staticmap_39 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_9" srcset="staticmap_24 2x" alt="Map of flight plan from MMTO to KCMH">
+    </picture>
+						<div class="main-masonry-title">
+							MMTO → KCMH 
+							
+								by roncoylejr
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:37 GMT" datetime="2024-09-07T16:26:37Z">10 minutes ago</time>
+								<hr>
+								Toluca Lic. Adolfo Lopez Mateos<br>
+								to<br>
+								Columbus-John Glenn Intl
+								<hr>
+								1,556 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195797">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_47 1x, staticmap_33 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_12" srcset="staticmap_16 2x" alt="Map of flight plan from LDPL to LSZR">
+    </picture>
+						<div class="main-masonry-title">
+							LDPL → LSZR 
+							
+								by UK2912
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:35 GMT" datetime="2024-09-07T16:26:35Z">10 minutes ago</time>
+								<hr>
+								Pula<br>
+								to<br>
+								Sankt Gallen - Altenrhein
+								<hr>
+								239 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195796">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_48 1x, staticmap_51 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_10" srcset="staticmap_22 2x" alt="Map of flight plan from LOWK to LIRP">
+    </picture>
+						<div class="main-masonry-title">
+							LOWK → LIRP 
+							
+								by amjadnaseeb
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:26:30 GMT" datetime="2024-09-07T16:26:30Z">11 minutes ago</time>
+								<hr>
+								Klagenfurt<br>
+								to<br>
+								Pisa-San Giusto "Galileo Galilei"
+								<hr>
+								245 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+				<div class="main-masonry main-item">
+					<a class="block-link" href="/plan/8195795">
+						<picture class="main-masonry-map">
+        <source srcset="staticmap_55 1x, staticmap_44 2x" type="image/webp">
+        <img class="main-masonry-map" src="staticmap_13" srcset="staticmap_14 2x" alt="Map of flight plan from MUCU to KMIA">
+    </picture>
+						<div class="main-masonry-title">
+							MUCU → KMIA 
+							
+								by emgarcia
+							
+							<div class="main-masonry-date">
+								<time title="Sat, 07 Sep 2024 16:25:46 GMT" datetime="2024-09-07T16:25:46Z">11 minutes ago</time>
+								<hr>
+								Santiago de Cuba Antonio Maceo Intl<br>
+								to<br>
+								Miami Intl
+								<hr>
+								473 nm<br>
+								Tags: generated
+							</div>
+						</div>
+					</a>
+					
+				</div>
+				
+			</div>
+
+			
+
+			<div class="footer">
+	<div class="footer-icon"></div>
+	<div class="footer-item">
+		<span class="footer-item-title">Info</span><br>
+		<ul>
+			<li>- <a href="/about">About</a></li>
+			<li>- <a href="/stats">Stats</a></li>
+		</ul>
+	</div>
+	<div class="footer-item">
+		<span class="footer-item-title">Support</span><br>
+		<ul>
+			<li>- <a href="/contact">Contact Us</a></li>
+		</ul>
+	</div>
+	<div class="footer-item">
+		<span class="footer-item-title">Developers</span><br>
+		<ul>
+			<li>- <a href="/dev/api">API</a></li>
+			<li>- <a href="/dev/specification">FMS Specification</a></li>
+		</ul>
+	</div>
+	<div class="footer-item">
+		<span class="footer-item-title">Legal</span><br>
+		<ul>
+			<li>- <a href="/tos">Terms</a></li>
+			<li>- <a href="/privacy">Privacy</a></li>
+		</ul>
+	</div>
+	<div class="footer-item">
+		2008 - 2024 -- 0.012s<br>
+	</div>
+</div>
+		</div>
+
+		<div class="cookie-consent">
+	This website uses cookies to ensure you get the best experience<br>
+	<span class="cookie-consent-ok">OK!</span>
+</div>
+
+
+<script type="text/javascript" charset="utf-8" src="js/8783105230391065073211852028465895191997838908.js" nonce="314b8e9c957052a9d63f6b38cce969199dbd061941918f3d18"></script>
+
+
+<script type="text/javascript" nonce="314b8e9c957052a9d63f6b38cce969199dbd061941918f3d18">
+	Raven.config('https://0fffe4341d71411b9533796aec65ddcb@sentry.io/61759', {
+		ignoreErrors: [
+			/Blocked a frame with origin "\S+" from accessing a frame with origin "\S+"\. Protocols, domains, and ports must match\./i
+		]
+	}).install();
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	if (ga) {
+		ga('create', '1-20023134-AU'.split('').reverse().join(''), {
+			dh: 'flightplandatabase.com',
+			siteSpeedSampleRate: 100,
+			forceSSL: true
+		});
+		ga('set', 'dimension1', 'Guest');
+		ga('set', 'dimension2', 'true');
+		ga('set', 'anonymizeIp', true);
+		ga('send', 'pageview');
+	}
+</script>
+		<script type="text/javascript" nonce="314b8e9c957052a9d63f6b38cce969199dbd061941918f3d18">
+			new Chosen(document.getElementById('search-tags'), {
+				width: '100%',
+				placeholder_text_multiple: 'Select some tags',
+				no_results_text: 'No tags found'
+			})
+		</script>
+	
+</body></html>
